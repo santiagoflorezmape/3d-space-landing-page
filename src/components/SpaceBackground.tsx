@@ -329,7 +329,7 @@ export function SpaceBackground() {
             const angle = (i / (spikes * 2)) * Math.PI * 2 - Math.PI / 2;
             const px2 = Math.cos(angle) * r;
             const py2 = Math.sin(angle) * r;
-            i === 0 ? ctx.moveTo(px2, py2) : ctx.lineTo(px2, py2);
+            if (i === 0) { ctx.moveTo(px2, py2); } else { ctx.lineTo(px2, py2); }
           }
           ctx.closePath();
           const sg = ctx.createRadialGradient(0, 0, 0, 0, 0, outerR);
@@ -415,7 +415,7 @@ export function SpaceBackground() {
               const r2 = t * s * 0.06;
               const gx = Math.cos(angle) * r2;
               const gy = Math.sin(angle) * r2;
-              t === 0 ? ctx.moveTo(gx, gy) : ctx.lineTo(gx, gy);
+              if (t === 0) { ctx.moveTo(gx, gy); } else { ctx.lineTo(gx, gy); }
             }
             ctx.strokeStyle = `hsla(${o.hue + arm * 20},60%,70%,${a * 0.5})`;
             ctx.lineWidth = 1;
@@ -440,7 +440,7 @@ export function SpaceBackground() {
             const r2 = s * (0.6 + Math.sin(i * 2.5) * 0.3);
             const ax = Math.cos(angle) * r2;
             const ay = Math.sin(angle) * r2;
-            i === 0 ? ctx.moveTo(ax, ay) : ctx.lineTo(ax, ay);
+            if (i === 0) { ctx.moveTo(ax, ay); } else { ctx.lineTo(ax, ay); }
           }
           ctx.closePath();
           ctx.fillStyle = `hsla(${o.hue},20%,35%,${a})`;

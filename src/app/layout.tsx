@@ -11,9 +11,34 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Infoproduct Zenith",
-  description: "Infoproduct Zenith — Growth Operating Agency",
+  description:
+    "We architect unstoppable growth systems for info-product brands — turning expertise into empires through precision funnels, organic content, and conversion science.",
+  metadataBase: new URL("https://infoproduct-zenith.vercel.app"),
   icons: {
     icon: "/seo/icon.webp",
+    apple: "/seo/icon.webp",
+    shortcut: "/seo/icon.webp",
+  },
+  openGraph: {
+    type: "website",
+    title: "Infoproduct Zenith — Growth Operating Agency",
+    description:
+      "We architect unstoppable growth systems for info-product brands — turning expertise into empires through precision funnels, organic content, and conversion science.",
+    images: [
+      {
+        url: "/seo/og.png",
+        width: 2560,
+        height: 1440,
+        alt: "Infoproduct Zenith",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Infoproduct Zenith — Growth Operating Agency",
+    description:
+      "We architect unstoppable growth systems for info-product brands — turning expertise into empires through precision funnels, organic content, and conversion science.",
+    images: ["/seo/og.png"],
   },
 };
 
