@@ -256,7 +256,7 @@ export function HeroSection() {
           background: rgba(167,139,250,0.06);
         }
         @media (max-width: 900px) {
-          #hero { padding: 80px 24px !important; }
+          #hero { padding: 120px 24px 80px !important; }
         }
       `}</style>
     </section>
