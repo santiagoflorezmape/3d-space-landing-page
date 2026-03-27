@@ -27,7 +27,7 @@ export function AboutSection() {
     <section
       id="about"
       ref={sectionRef}
-      style={{ padding: "100px 60px", position: "relative", zIndex: 2 }}
+      style={{ padding: "140px 60px", position: "relative", zIndex: 2 }}
     >
       <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
         <div className="about-grid">
@@ -290,7 +290,7 @@ export function AboutSection() {
         .label-2 { bottom: 30px; left: -30px; animation-delay: 1.3s; }
         .label-3 { top: 50%; right: -50px; animation-delay: 2.6s; }
         @media (max-width: 900px) {
-          #about { padding: 80px 24px !important; }
+          #about { padding: 110px 24px !important; }
           .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
           .about-visual { height: 300px !important; }
         }

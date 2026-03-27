@@ -27,7 +27,7 @@ export function ServicesSection() {
     <section
       id="services"
       ref={sectionRef}
-      style={{ padding: "100px 60px", position: "relative", zIndex: 2 }}
+      style={{ padding: "140px 60px", position: "relative", zIndex: 2 }}
     >
       <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
         <div
@@ -156,7 +156,7 @@ export function ServicesSection() {
           opacity: 1;
         }
         @media (max-width: 900px) {
-          #services { padding: 80px 24px !important; }
+          #services { padding: 110px 24px !important; }
           .services-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>

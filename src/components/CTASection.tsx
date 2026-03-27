@@ -28,7 +28,7 @@ export function CTASection() {
       id="cta"
       ref={sectionRef}
       style={{
-        padding: "100px 60px",
+        padding: "140px 60px",
         position: "relative",
         zIndex: 2,
         textAlign: "center",
@@ -143,7 +143,7 @@ export function CTASection() {
         }
         @media (max-width: 900px) {
           .cta-box { padding: 50px 30px !important; }
-          #cta { padding: 80px 24px !important; }
+          #cta { padding: 110px 24px !important; }
         }
       `}</style>
     </section>

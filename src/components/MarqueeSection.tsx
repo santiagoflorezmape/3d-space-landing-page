@@ -21,7 +21,7 @@ export function MarqueeSection() {
         style={{
           display: "flex",
           gap: 60,
-          animation: "marquee 30s linear infinite",
+          animation: "marquee 55s linear infinite",
           width: "max-content",
         }}
       >
