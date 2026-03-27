@@ -1,21 +1,11 @@
 "use client";
 
-const items = [
-  "Funnel Architecture",
-  "Traffic & Acquisition",
-  "Conversion Optimization",
-  "Offer Engineering",
-  "Analytics",
-  "Retention Systems",
-  "Email Marketing",
-  "Creative Strategy",
-  "Landing Pages",
-  "Webinar Funnels",
-  "VSL Production",
-  "Community Building",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function MarqueeSection() {
+  const { t } = useLanguage();
+  const items = t.marquee.items;
+
   return (
     <div
       style={{

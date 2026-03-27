@@ -1,42 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
-const testimonials = [
-  {
-    quote:
-      "$50K+ launch in a week for a land wholesaling mentorship offer, entire process handled in house.",
-    initials: "JD",
-    gradient: "linear-gradient(135deg, #7c3aed, #a78bfa)",
-    name: "Jonathan Duong",
-    role: "Founder, High Value Inner Circle",
-  },
-  {
-    quote: "Over $100k CC in sales for a wholesaling mentorship offer.",
-    initials: "JR",
-    gradient: "linear-gradient(135deg, #a78bfa, #c4b5fd)",
-    name: "Joe Reilly",
-    role: "Co-founder, Enterprise Elite",
-  },
-  {
-    quote:
-      "$18k+ CC in a week for a fitness offer in the Spanish Market.",
-    initials: "GB",
-    gradient: "linear-gradient(135deg, #c4b5fd, #7c3aed)",
-    name: "Gianfranco Benavides",
-    role: "CEO, Fuerza Ejecutiva",
-  },
-  {
-    quote: "Monthly revenue doubled in 90 days.",
-    initials: "JK",
-    gradient: "linear-gradient(135deg, #c4b5fd, #7c3aed)",
-    name: "JinYoung Kim",
-    role: "CEO, Bring Me In Korean",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function TestimonialsSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -75,7 +44,7 @@ export function TestimonialsSection() {
               marginBottom: 16,
             }}
           >
-            Client Results
+            {t.testimonials.eyebrow}
           </div>
           <div
             style={{
@@ -86,16 +55,16 @@ export function TestimonialsSection() {
               lineHeight: 1.15,
             }}
           >
-            They scaled.
+            {t.testimonials.headingLine1}
             <br />
-            You&apos;re next.
+            {t.testimonials.headingLine2}
           </div>
         </div>
 
         <div className="testimonials-grid">
-          {testimonials.map((t, i) => (
+          {t.testimonials.items.map((testimonial, i) => (
             <div
-              key={t.name}
+              key={testimonial.name}
               className={`testimonial-card reveal reveal-delay-${i + 1}`}
             >
               <div
@@ -118,7 +87,7 @@ export function TestimonialsSection() {
                   marginBottom: 24,
                 }}
               >
-                {t.quote}
+                {testimonial.quote}
               </blockquote>
               <div
                 style={{ display: "flex", alignItems: "center", gap: 14 }}
@@ -134,20 +103,20 @@ export function TestimonialsSection() {
                     fontSize: 16,
                     fontWeight: 700,
                     color: "white",
-                    background: t.gradient,
+                    background: testimonial.gradient,
                     flexShrink: 0,
                   }}
                 >
-                  {t.initials}
+                  {testimonial.initials}
                 </div>
                 <div>
                   <div
                     style={{ fontSize: 14, fontWeight: 600, color: "white" }}
                   >
-                    {t.name}
+                    {testimonial.name}
                   </div>
                   <div style={{ fontSize: 12, color: "#9896aa" }}>
-                    {t.role}
+                    {testimonial.role}
                   </div>
                 </div>
               </div>

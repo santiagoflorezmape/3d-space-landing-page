@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function CTASection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -46,7 +48,7 @@ export function CTASection() {
             marginBottom: 16,
           }}
         >
-          Ready?
+          {t.cta.eyebrow}
         </div>
         <div
           style={{
@@ -58,7 +60,7 @@ export function CTASection() {
             marginBottom: 16,
           }}
         >
-          Let&apos;s engineer your
+          {t.cta.headingLine1}
           <br />
           <span
             style={{
@@ -67,7 +69,7 @@ export function CTASection() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            next breakthrough
+            {t.cta.headingAccent}
           </span>
         </div>
         <p
@@ -81,9 +83,7 @@ export function CTASection() {
             marginBottom: 36,
           }}
         >
-          Book a free strategy session. We&apos;ll audit your funnel, identify
-          the biggest growth levers, and map out a 90-day scaling plan — no
-          strings attached.
+          {t.cta.body}
         </p>
         <button
           type="button"
@@ -95,7 +95,7 @@ export function CTASection() {
             )
           }
         >
-          Book Your Free Call →
+          {t.cta.btn}
         </button>
       </div>
 

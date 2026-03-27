@@ -1,16 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
-const values = [
-  "Operator-first mindset — we've built what we teach",
-  "Radical transparency with real-time reporting",
-  "Performance-aligned incentives, not retainer traps",
-  "Full-stack capability from creative to analytics",
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -59,9 +54,9 @@ export function AboutSection() {
               </div>
 
               {/* Labels */}
-              <div className="engine-label label-1">Funnels</div>
-              <div className="engine-label label-2">Analytics</div>
-              <div className="engine-label label-3">Growth</div>
+              <div className="engine-label label-1">{t.about.labelFunnels}</div>
+              <div className="engine-label label-2">{t.about.labelAnalytics}</div>
+              <div className="engine-label label-3">{t.about.labelGrowth}</div>
             </div>
           </div>
 
@@ -79,7 +74,7 @@ export function AboutSection() {
                 textAlign: "left",
               }}
             >
-              Who We Are
+              {t.about.eyebrow}
             </div>
             <div
               className="reveal reveal-delay-1"
@@ -93,9 +88,9 @@ export function AboutSection() {
                 marginBottom: 24,
               }}
             >
-              Not an agency.
+              {t.about.headingLine1}
               <br />
-              Your growth engine.
+              {t.about.headingLine2}
             </div>
             <p
               className="reveal reveal-delay-2"
@@ -107,16 +102,13 @@ export function AboutSection() {
                 marginBottom: 32,
               }}
             >
-              We&apos;re a team of operators, not consultants. Every strategy we
-              deploy, we&apos;ve battle-tested on our own brands first. We embed
-              into your business and treat your P&L like our own — because
-              growth isn&apos;t a service, it&apos;s a partnership.
+              {t.about.body}
             </p>
             <div
               className="reveal reveal-delay-3"
               style={{ display: "flex", flexDirection: "column", gap: 16 }}
             >
-              {values.map((value) => (
+              {t.about.values.map((value) => (
                 <div
                   key={value}
                   style={{

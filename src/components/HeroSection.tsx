@@ -1,16 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
-const stats = [
-  { num: "200", accent: "K+", label: "Revenue Generated" },
-  { num: "6", accent: "+", label: "Companies Scaled" },
-  { num: "6", accent: "x", label: "Avg. Revenue Growth" },
-  { num: "93", accent: "%", label: "Client Retention" },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -71,7 +66,7 @@ export function HeroSection() {
               display: "inline-block",
             }}
           />
-          Growth Operating Agency
+          {t.hero.badge}
         </span>
       </div>
 
@@ -87,7 +82,7 @@ export function HeroSection() {
           margin: "0 auto",
         }}
       >
-        Scale to your{" "}
+        {t.hero.headingPre}{" "}
         <span
           style={{
             background: "linear-gradient(135deg, #c4b5fd, #a78bfa, #7c3aed)",
@@ -95,7 +90,7 @@ export function HeroSection() {
             WebkitTextFillColor: "transparent",
           }}
         >
-          Zenith
+          {t.hero.headingAccent}
         </span>
       </h1>
 
@@ -110,9 +105,7 @@ export function HeroSection() {
           fontWeight: 300,
         }}
       >
-        We architect unstoppable growth systems for info-product brands —
-        turning expertise into empires through precision funnels, organic
-        content, and conversion science.
+        {t.hero.sub}
       </p>
 
       <div
@@ -180,7 +173,7 @@ export function HeroSection() {
             )
           }
         >
-          Book a Strategy Call →
+          {t.hero.cta1}
         </button>
         <button
           type="button"
@@ -191,7 +184,7 @@ export function HeroSection() {
               ?.scrollIntoView({ behavior: "smooth" })
           }
         >
-          See How We Do It ↓
+          {t.hero.cta2}
         </button>
       </div>
 
@@ -205,7 +198,7 @@ export function HeroSection() {
           flexWrap: "wrap" as const,
         }}
       >
-        {stats.map((stat) => (
+        {t.hero.stats.map((stat) => (
           <div key={stat.label} style={{ textAlign: "center" }}>
             <div style={{ fontSize: 42, fontWeight: 800, color: "white" }}>
               {stat.num}

@@ -1,6 +1,10 @@
 "use client";
 
+import { useLanguage } from "@/contexts/LanguageContext";
+
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer
       style={{
@@ -16,10 +20,10 @@ export function Footer() {
       }}
     >
       <p style={{ fontSize: 13, color: "#9896aa", fontWeight: 400 }}>
-        © 2026 Infoproduct Zenith. All rights reserved.
+        {t.footer.copyright}
       </p>
       <p style={{ fontSize: 13, color: "#9896aa", fontWeight: 400 }}>
-        Built for brands that refuse to plateau.{" "}
+        {t.footer.tagline}{" "}
         <a
           href="#"
           onClick={(e) => {
@@ -28,7 +32,7 @@ export function Footer() {
           }}
           style={{ color: "#a78bfa", textDecoration: "none", cursor: "pointer" }}
         >
-          Back to top ↑
+          {t.footer.backToTop}
         </a>
       </p>
 

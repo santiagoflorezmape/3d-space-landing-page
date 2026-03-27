@@ -1,42 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-
-const services = [
-  {
-    icon: "🚀",
-    title: "Funnel Architecture",
-    desc: "High-converting sales funnels built from first principles — VSLs, webinars, challenges, and application funnels that print revenue on autopilot.",
-  },
-  {
-    icon: "📡",
-    title: "Traffic & Acquisition",
-    desc: "Organic traffic engines, strategic partnerships, and viral content systems that drive qualified leads on autopilot — without dependency on any single channel.",
-  },
-  {
-    icon: "⚡",
-    title: "Conversion Optimization",
-    desc: "Data-driven CRO that turns traffic into buyers. A/B testing, copy optimization, checkout flow engineering, and behavioral analytics at scale.",
-  },
-  {
-    icon: "🧠",
-    title: "Offer Engineering",
-    desc: 'Irresistible offer stacks designed using value-equation frameworks. Positioning, pricing strategy, and packaging that makes saying "no" impossible.',
-  },
-  {
-    icon: "📊",
-    title: "Analytics & Attribution",
-    desc: "Full-stack tracking, attribution modeling, and custom dashboards. Know exactly which dollar produces which result — no more guessing.",
-  },
-  {
-    icon: "🔁",
-    title: "Retention Systems",
-    desc: "Email/SMS nurture sequences, community engines, and ascension ladders that maximize lifetime value and turn customers into evangelists.",
-  },
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -75,7 +44,7 @@ export function ServicesSection() {
               marginBottom: 16,
             }}
           >
-            What We Build
+            {t.services.eyebrow}
           </div>
           <div
             style={{
@@ -86,9 +55,9 @@ export function ServicesSection() {
               lineHeight: 1.15,
             }}
           >
-            End-to-end growth
+            {t.services.headingLine1}
             <br />
-            infrastructure
+            {t.services.headingLine2}
           </div>
           <p
             style={{
@@ -100,13 +69,12 @@ export function ServicesSection() {
               fontWeight: 300,
             }}
           >
-            Every lever of growth — engineered, optimized, and scaled under one
-            roof.
+            {t.services.sub}
           </p>
         </div>
 
         <div className="services-grid">
-          {services.map((service, i) => (
+          {t.services.items.map((service, i) => (
             <div
               key={service.title}
               className={`service-card reveal reveal-delay-${Math.min(i + 1, 5)}`}
