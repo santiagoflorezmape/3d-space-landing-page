@@ -14,7 +14,7 @@ export function CTASection() {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) entry.target.classList.add("visible");
+          if (entry.isIntersecting) entry.target.classList.add("in");
         });
       },
       { threshold: 0.1 }
@@ -24,59 +24,13 @@ export function CTASection() {
   }, []);
 
   return (
-    <section
-      id="cta"
-      ref={sectionRef}
-      style={{
-        padding: "160px 0",
-        position: "relative",
-        textAlign: "center",
-      }}
-    >
-      <div className="container">
-        <h2
-          className="heading reveal"
-          style={{
-            fontSize: "clamp(32px, 5vw, 56px)",
-            maxWidth: 700,
-            margin: "0 auto 24px",
-          }}
-        >
-          {t.cta.headingLine1}{" "}
-          <span className="soft">{t.cta.headingSoft}</span>
+    <section id="cta" ref={sectionRef}>
+      <div className="container cta-inner">
+        <h2 className="reveal wide">
+          {t.cta.titlePre}{" "}
+          <span className="soft">{t.cta.titleSoft}</span>
         </h2>
-
-        <p
-          className="reveal d1"
-          style={{
-            fontSize: 15,
-            color: "var(--muted)",
-            maxWidth: 480,
-            margin: "0 auto 12px",
-            lineHeight: 1.7,
-            fontWeight: 300,
-          }}
-        >
-          {t.cta.body}
-        </p>
-
-        <p
-          className="reveal d1"
-          style={{
-            fontSize: 13,
-            color: "var(--muted)",
-            maxWidth: 420,
-            margin: "0 auto 36px",
-            lineHeight: 1.6,
-            fontStyle: "italic",
-            fontWeight: 300,
-            opacity: 0.7,
-          }}
-        >
-          {t.cta.note}
-        </p>
-
-        <div className="reveal d2">
+        <div className="reveal d1">
           <a
             className="btn"
             href="https://cal.com/santiagoflorezmape/infoproduct-zenith"
@@ -86,6 +40,7 @@ export function CTASection() {
             {t.cta.btn}
           </a>
         </div>
+        <p className="small reveal d2">{t.cta.small}</p>
       </div>
     </section>
   );

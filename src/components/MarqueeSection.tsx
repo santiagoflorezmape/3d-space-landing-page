@@ -10,8 +10,8 @@ export function MarqueeSection() {
     <div
       style={{
         padding: "20px 0",
-        borderTop: "1px solid var(--border)",
-        borderBottom: "1px solid var(--border)",
+        borderTop: "1px solid var(--line)",
+        borderBottom: "1px solid var(--line)",
         overflow: "hidden",
         position: "relative",
       }}
@@ -32,7 +32,7 @@ export function MarqueeSection() {
               color: "var(--muted)",
               fontWeight: 500,
               whiteSpace: "nowrap",
-              textTransform: "uppercase",
+              textTransform: "uppercase" as const,
               letterSpacing: 2.5,
               opacity: 0.5,
               display: "flex",

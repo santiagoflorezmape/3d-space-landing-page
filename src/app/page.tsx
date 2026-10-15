@@ -1,10 +1,13 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { MarqueeSection } from "@/components/MarqueeSection";
-import { ServicesSection } from "@/components/ServicesSection";
-import { AboutSection } from "@/components/AboutSection";
+import { ProblemSection } from "@/components/ProblemSection";
+import { ProcessSection } from "@/components/ProcessSection";
+import { DeliverSection } from "@/components/DeliverSection";
+import { ProofSection } from "@/components/ProofSection";
 import { FitSection } from "@/components/FitSection";
-import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { GuaranteeSection } from "@/components/GuaranteeSection";
+import { FAQSection } from "@/components/FAQSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
 import { OrbitalBackground } from "@/components/OrbitalBackground";
@@ -14,13 +17,16 @@ export default function Home() {
     <>
       <OrbitalBackground />
       <Navbar />
-      <main style={{ position: "relative", zIndex: 2 }}>
+      <main>
         <HeroSection />
         <MarqueeSection />
-        <ServicesSection />
-        <AboutSection />
+        <ProblemSection />
+        <ProcessSection />
+        <DeliverSection />
+        <ProofSection />
         <FitSection />
-        <TestimonialsSection />
+        <GuaranteeSection />
+        <FAQSection />
         <CTASection />
       </main>
       <Footer />

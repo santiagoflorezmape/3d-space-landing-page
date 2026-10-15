@@ -6,9 +6,9 @@ export function SectionCTA() {
   const { t } = useLanguage();
 
   return (
-    <div className="section-cta reveal">
+    <div className="section-cta">
       <a
-        className="btn btn-sm"
+        className="btn"
         href="https://cal.com/santiagoflorezmape/infoproduct-zenith"
         target="_blank"
         rel="noopener noreferrer"
