@@ -28,120 +28,65 @@ export function CTASection() {
       id="cta"
       ref={sectionRef}
       style={{
-        padding: "160px 60px",
+        padding: "160px 0",
         position: "relative",
         textAlign: "center",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
       }}
     >
-      <div className="cta-box reveal">
-        <div
+      <div className="container">
+        <h2
+          className="heading reveal"
           style={{
-            fontSize: 12,
-            textTransform: "uppercase" as const,
-            letterSpacing: 3,
-            color: "#a78bfa",
-            fontWeight: 600,
-            marginBottom: 16,
+            fontSize: "clamp(32px, 5vw, 56px)",
+            maxWidth: 700,
+            margin: "0 auto 24px",
           }}
         >
-          {t.cta.eyebrow}
-        </div>
-        <div
-          style={{
-            fontSize: "clamp(28px, 4vw, 44px)",
-            fontWeight: 800,
-            color: "white",
-            letterSpacing: -1.5,
-            lineHeight: 1.15,
-            marginBottom: 16,
-          }}
-        >
-          {t.cta.headingLine1}
-          <br />
-          <span
-            style={{
-              background: "linear-gradient(135deg, #c4b5fd, #a78bfa)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            {t.cta.headingAccent}
-          </span>
-        </div>
+          {t.cta.headingLine1}{" "}
+          <span className="soft">{t.cta.headingSoft}</span>
+        </h2>
+
         <p
+          className="reveal d1"
           style={{
             fontSize: 15,
-            color: "#9896aa",
-            maxWidth: 440,
-            margin: "0 auto",
+            color: "var(--muted)",
+            maxWidth: 480,
+            margin: "0 auto 12px",
             lineHeight: 1.7,
             fontWeight: 300,
-            marginBottom: 20,
           }}
         >
           {t.cta.body}
         </p>
+
         <p
+          className="reveal d1"
           style={{
             fontSize: 13,
-            color: "#6b6b80",
+            color: "var(--muted)",
             maxWidth: 420,
-            margin: "0 auto",
+            margin: "0 auto 36px",
             lineHeight: 1.6,
             fontStyle: "italic",
-            marginBottom: 32,
+            fontWeight: 300,
+            opacity: 0.7,
           }}
         >
           {t.cta.note}
         </p>
-        <button
-          type="button"
-          className="cta-btn"
-          onClick={() =>
-            window.open(
-              "https://cal.com/santiagoflorezmape/infoproduct-zenith",
-              "_blank"
-            )
-          }
-        >
-          {t.cta.btn}
-        </button>
-      </div>
 
-      <style>{`
-        .cta-box {
-          padding: 72px 56px;
-          border-radius: 24px;
-          border: 1px solid rgba(255,255,255,0.05);
-          background: rgba(255,255,255,0.02);
-          text-align: center;
-          max-width: 720px;
-          width: 100%;
-        }
-        .cta-btn {
-          padding: 16px 44px;
-          background: #7c3aed;
-          color: white;
-          border: none;
-          border-radius: 99px;
-          font-size: 15px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: 0.3s;
-          font-family: inherit;
-        }
-        .cta-btn:hover {
-          background: #6d28d9;
-          transform: translateY(-2px);
-        }
-        @media (max-width: 900px) {
-          .cta-box { padding: 48px 28px !important; }
-          #cta { padding: 120px 24px !important; }
-        }
-      `}</style>
+        <div className="reveal d2">
+          <a
+            className="btn"
+            href="https://cal.com/santiagoflorezmape/infoproduct-zenith"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {t.cta.btn}
+          </a>
+        </div>
+      </div>
     </section>
   );
 }

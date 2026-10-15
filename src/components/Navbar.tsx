@@ -36,87 +36,107 @@ export function Navbar() {
         left: 0,
         width: "100%",
         zIndex: 100,
-        padding: scrolled ? "14px 40px" : "20px 40px",
+        padding: scrolled ? "12px 40px" : "18px 40px",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        backdropFilter: "blur(24px)",
-        background: scrolled ? "rgba(5,5,16,0.92)" : "rgba(5,5,16,0.6)",
-        borderBottom: "1px solid rgba(255,255,255,0.04)",
-        transition: "0.4s",
+        backdropFilter: "blur(20px)",
+        background: scrolled ? "rgba(6,6,15,0.88)" : "transparent",
+        borderBottom: scrolled ? "1px solid rgba(255,255,255,0.04)" : "1px solid transparent",
+        transition: "all 0.5s cubic-bezier(0.16,1,0.3,1)",
       }}
     >
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <div
+      <a
+        href="#hero"
+        onClick={(e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        }}
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: 10,
+          textDecoration: "none",
+          cursor: "pointer",
+        }}
+      >
+        <span
           style={{
-            width: 36,
-            height: 36,
+            width: 32,
+            height: 32,
             position: "relative",
-            borderRadius: 8,
+            borderRadius: 6,
             overflow: "hidden",
           }}
         >
           <Image
             src="/images/logo.webp"
             alt="Infoproduct Zenith"
-            width={36}
-            height={36}
+            width={32}
+            height={32}
             style={{
               width: "100%",
               height: "100%",
               objectFit: "contain",
             }}
           />
-        </div>
-        <div
+        </span>
+        <span
           style={{
-            fontSize: 17,
-            fontWeight: 700,
-            letterSpacing: -0.5,
+            fontSize: 15,
+            fontWeight: 500,
+            letterSpacing: -0.3,
             color: "white",
+            fontFamily: "var(--font-body)",
           }}
         >
-          Infoproduct <span style={{ color: "#a78bfa" }}>Zenith</span>
-        </div>
+          Infoproduct{" "}
+          <em
+            style={{
+              fontStyle: "italic",
+              fontFamily: "var(--font-heading)",
+              fontSize: 17,
+              fontWeight: 400,
+              color: "var(--accent-soft)",
+            }}
+          >
+            Zenith
+          </em>
+        </span>
+      </a>
+
+      <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+        {LANGUAGES.map((lang) => (
+          <button
+            key={lang.code}
+            type="button"
+            onClick={() => setLanguage(lang.code)}
+            style={{
+              padding: "6px 12px",
+              borderRadius: 99,
+              border: "none",
+              background:
+                lang.code === language
+                  ? "rgba(139,115,230,0.12)"
+                  : "transparent",
+              color:
+                lang.code === language ? "white" : "var(--muted)",
+              fontSize: 12,
+              fontWeight: 600,
+              cursor: "pointer",
+              fontFamily: "var(--font-body)",
+              letterSpacing: 0.5,
+              transition: "0.3s",
+            }}
+          >
+            {lang.label}
+          </button>
+        ))}
       </div>
 
-      <button
-        className="lang-btn"
-        type="button"
-        onClick={cycleLanguage}
-        title="Switch language"
-      >
-        <span>{currentLang.flag}</span>
-        <span>{currentLang.label}</span>
-      </button>
-
       <style>{`
-        .lang-btn {
-          height: 36px;
-          padding: 0 14px;
-          border-radius: 99px;
-          border: 1px solid rgba(255,255,255,0.06);
-          background: rgba(255,255,255,0.03);
-          backdrop-filter: blur(10px);
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 6px;
-          color: #e2e0f0;
-          font-size: 12px;
-          font-weight: 600;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
-          font-family: inherit;
-          transition: 0.3s;
-        }
-        .lang-btn:hover {
-          border-color: rgba(255,255,255,0.12);
-          background: rgba(255,255,255,0.06);
-        }
         @media (max-width: 900px) {
-          nav { padding-left: 24px !important; padding-right: 24px !important; }
+          nav { padding-left: 20px !important; padding-right: 20px !important; }
         }
       `}</style>
     </nav>

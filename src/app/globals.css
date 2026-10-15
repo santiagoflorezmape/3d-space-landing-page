@@ -1,18 +1,21 @@
 @import "tailwindcss";
 
 @theme inline {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-heading), "Cormorant Garamond", "Georgia", serif;
+  --font-body: var(--font-body), "Manrope", system-ui, sans-serif;
 }
 
 :root {
-  --accent: #a78bfa;
+  --accent: #8b73e6;
   --accent2: #7c3aed;
-  --accent3: #c4b5fd;
-  --bg: #050510;
-  --card: rgba(255, 255, 255, 0.03);
+  --accent-soft: #d9d0ff;
+  --bg: #06060f;
+  --bg2: #0a0a18;
+  --card: rgba(255, 255, 255, 0.025);
   --border: rgba(255, 255, 255, 0.06);
   --text: #e2e0f0;
-  --muted: #9896aa;
+  --muted: #8d8ba4;
+  --soft: #c8c6d8;
 }
 
 *,
@@ -28,12 +31,13 @@ body {
   width: 100%;
   background: var(--bg);
   overflow-x: hidden;
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
   color: var(--text);
+  -webkit-font-smoothing: antialiased;
 }
 
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
@@ -41,14 +45,15 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--accent2);
+  background: rgba(139, 115, 230, 0.3);
   border-radius: 9px;
 }
 
+/* ---- Reveal animations ---- */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(32px);
+  transition: 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .reveal.visible {
@@ -56,12 +61,97 @@ body {
   transform: translateY(0);
 }
 
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+.d4 { transition-delay: 0.32s; }
 
+/* ---- Shared typography ---- */
+.heading {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.heading .soft {
+  color: var(--soft);
+}
+
+.eyebrow {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.eyebrow::before {
+  content: "\2014\00a0\00a0";
+  opacity: 0.4;
+}
+
+/* ---- Shared card ---- */
+.glass {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+}
+
+/* ---- Shared CTA button ---- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 40px;
+  border-radius: 99px;
+  border: 1px solid rgba(139, 115, 230, 0.3);
+  background: rgba(139, 115, 230, 0.08);
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--font-body);
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  backdrop-filter: blur(12px);
+}
+
+.btn:hover {
+  background: rgba(139, 115, 230, 0.18);
+  border-color: rgba(139, 115, 230, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(139, 115, 230, 0.15);
+}
+
+.btn-sm {
+  padding: 12px 28px;
+  font-size: 13px;
+}
+
+/* ---- Section CTA block ---- */
+.section-cta {
+  text-align: center;
+  margin-top: 64px;
+}
+
+/* ---- Container ---- */
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+@media (max-width: 900px) {
+  .container { padding: 0 24px; }
+}
+
+/* ---- Keyframes ---- */
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.3; }
@@ -70,4 +160,14 @@ body {
 @keyframes marquee {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.22; }
 }

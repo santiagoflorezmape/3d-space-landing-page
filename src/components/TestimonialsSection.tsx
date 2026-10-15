@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SectionCTA } from "./SectionCTA";
 
 export function TestimonialsSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -27,111 +28,98 @@ export function TestimonialsSection() {
     <section
       id="testimonials"
       ref={sectionRef}
-      style={{ padding: "160px 60px", position: "relative" }}
+      style={{ padding: "140px 0", position: "relative" }}
     >
-      <div style={{ maxWidth: 720, width: "100%", margin: "0 auto" }}>
-        <div
-          className="reveal"
-          style={{ textAlign: "center", marginBottom: 60 }}
+      <div className="container">
+        <div className="eyebrow reveal">{t.testimonials.eyebrow}</div>
+        <h2
+          className="heading reveal d1"
+          style={{
+            fontSize: "clamp(32px, 4.5vw, 52px)",
+            maxWidth: 600,
+            marginBottom: 48,
+          }}
         >
-          <div
-            style={{
-              fontSize: 12,
-              textTransform: "uppercase" as const,
-              letterSpacing: 3,
-              color: "#a78bfa",
-              fontWeight: 600,
-              marginBottom: 16,
-            }}
-          >
-            {t.testimonials.eyebrow}
+          {t.testimonials.heading}
+        </h2>
+
+        <div className="proof-card glass reveal d2">
+          <div className="proof-stat">
+            <b
+              className="heading"
+              style={{ fontSize: "clamp(40px, 5vw, 56px)" }}
+            >
+              {t.testimonials.stat}
+            </b>
+            <span
+              style={{
+                fontSize: 13,
+                color: "var(--muted)",
+                fontWeight: 400,
+                marginTop: 4,
+              }}
+            >
+              {t.testimonials.statLabel}
+            </span>
           </div>
-          <div
-            style={{
-              fontSize: "clamp(30px, 4vw, 48px)",
-              fontWeight: 800,
-              color: "white",
-              letterSpacing: -1.5,
-              lineHeight: 1.15,
-            }}
-          >
-            {t.testimonials.headingLine1}
-            <br />
-            {t.testimonials.headingLine2}
+          <div className="proof-body">
+            <p
+              style={{
+                fontSize: 14,
+                color: "var(--soft)",
+                lineHeight: 1.75,
+                fontWeight: 300,
+                marginBottom: 20,
+              }}
+            >
+              {t.testimonials.body}
+            </p>
+            <div className="chips">
+              {t.testimonials.chips.map((chip) => (
+                <span key={chip} className="chip">
+                  {chip}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className="testimonial-card reveal reveal-delay-1">
-          <div
-            style={{
-              color: "#a78bfa",
-              fontSize: 13,
-              letterSpacing: 2,
-              marginBottom: 20,
-            }}
-          >
-            &#9733;&#9733;&#9733;&#9733;&#9733;
-          </div>
-          <blockquote
-            style={{
-              fontSize: 16,
-              color: "#c8c6d8",
-              lineHeight: 1.8,
-              fontWeight: 300,
-              fontStyle: "normal",
-              marginBottom: 28,
-            }}
-          >
-            &ldquo;{t.testimonials.quote}&rdquo;
-          </blockquote>
-          <div
-            style={{ display: "flex", alignItems: "center", gap: 12 }}
-          >
-            <div
-              style={{
-                width: 42,
-                height: 42,
-                borderRadius: "50%",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: 15,
-                fontWeight: 700,
-                color: "white",
-                background: "linear-gradient(135deg, #7c3aed, #a78bfa)",
-                flexShrink: 0,
-              }}
-            >
-              CS
-            </div>
-            <div>
-              <div
-                style={{ fontSize: 15, fontWeight: 600, color: "white" }}
-              >
-                {t.testimonials.name}
-              </div>
-              <div style={{ fontSize: 13, color: "#9896aa" }}>
-                {t.testimonials.role}
-              </div>
-            </div>
-          </div>
-        </div>
+        <SectionCTA />
       </div>
 
       <style>{`
-        .testimonial-card {
+        .proof-card {
           padding: 40px 36px;
-          background: rgba(255,255,255,0.02);
-          border: 1px solid rgba(255,255,255,0.05);
-          border-radius: 16px;
-          transition: 0.3s;
+          display: grid;
+          grid-template-columns: 200px 1fr;
+          gap: 36px;
+          align-items: start;
         }
-        .testimonial-card:hover {
-          border-color: rgba(255,255,255,0.1);
+        .proof-stat {
+          display: flex;
+          flex-direction: column;
+        }
+        .chips {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+        }
+        .chip {
+          padding: 6px 14px;
+          border-radius: 99px;
+          border: 1px solid var(--border);
+          background: rgba(139,115,230,0.04);
+          font-size: 11px;
+          color: var(--soft);
+          font-weight: 500;
+          letter-spacing: 0.5px;
         }
         @media (max-width: 900px) {
-          #testimonials { padding: 120px 24px !important; }
-          .testimonial-card { padding: 32px 24px !important; }
+          #testimonials { padding: 100px 0 !important; }
+          .proof-card {
+            grid-template-columns: 1fr !important;
+            padding: 28px 24px;
+          }
         }
       `}</style>
     </section>

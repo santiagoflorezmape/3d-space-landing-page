@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { SectionCTA } from "./SectionCTA";
 
 export function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -27,121 +28,97 @@ export function ServicesSection() {
     <section
       id="services"
       ref={sectionRef}
-      style={{ padding: "160px 60px", position: "relative" }}
+      style={{ padding: "140px 0", position: "relative" }}
     >
-      <div style={{ maxWidth: 1000, width: "100%", margin: "0 auto" }}>
-        <div
-          className="reveal"
-          style={{ textAlign: "center", marginBottom: 60 }}
+      <div className="container">
+        <div className="eyebrow reveal">{t.services.eyebrow}</div>
+        <h2
+          className="heading reveal d1"
+          style={{
+            fontSize: "clamp(32px, 4.5vw, 52px)",
+            marginBottom: 16,
+          }}
         >
-          <div
-            style={{
-              fontSize: 12,
-              textTransform: "uppercase" as const,
-              letterSpacing: 3,
-              color: "#a78bfa",
-              fontWeight: 600,
-              marginBottom: 16,
-            }}
-          >
-            {t.services.eyebrow}
-          </div>
-          <div
-            style={{
-              fontSize: "clamp(30px, 4vw, 48px)",
-              fontWeight: 800,
-              color: "white",
-              letterSpacing: -1.5,
-              lineHeight: 1.15,
-            }}
-          >
-            {t.services.headingLine1}
-            <br />
-            {t.services.headingLine2}
-          </div>
-          <p
-            style={{
-              fontSize: 16,
-              color: "#9896aa",
-              maxWidth: 480,
-              margin: "16px auto 0",
-              lineHeight: 1.7,
-              fontWeight: 300,
-            }}
-          >
-            {t.services.sub}
-          </p>
-        </div>
+          {t.services.heading}
+        </h2>
+        <p
+          className="reveal d2"
+          style={{
+            fontSize: 15,
+            color: "var(--muted)",
+            maxWidth: 500,
+            lineHeight: 1.7,
+            fontWeight: 300,
+            marginBottom: 56,
+          }}
+        >
+          {t.services.sub}
+        </p>
 
-        <div className="services-grid">
-          {t.services.items.map((service, i) => (
-            <div
-              key={service.title}
-              className={`service-card reveal reveal-delay-${Math.min(i + 1, 4)}`}
+        <div className="steps">
+          {t.services.items.map((step, i) => (
+            <article
+              key={step.title}
+              className={`step glass reveal d${Math.min(i + 1, 4)}`}
             >
-              <div
-                style={{
-                  width: 44,
-                  height: 44,
-                  background: "rgba(124,58,237,0.1)",
-                  borderRadius: 12,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 18,
-                  fontWeight: 800,
-                  color: "#a78bfa",
-                  marginBottom: 20,
-                }}
-              >
-                {service.icon}
+              <div className="step-meta">
+                <span className="step-num">{step.num}</span>
+                <span className="step-days">{step.days}</span>
               </div>
               <h3
-                style={{
-                  fontSize: 18,
-                  fontWeight: 700,
-                  color: "white",
-                  marginBottom: 10,
-                }}
+                className="heading"
+                style={{ fontSize: "clamp(20px, 2.5vw, 26px)", marginBottom: 12 }}
               >
-                {service.title}
+                {step.title}
               </h3>
               <p
                 style={{
                   fontSize: 14,
-                  color: "#9896aa",
-                  lineHeight: 1.7,
+                  color: "var(--muted)",
+                  lineHeight: 1.75,
                   fontWeight: 300,
                 }}
               >
-                {service.desc}
+                {step.desc}
               </p>
-            </div>
+            </article>
           ))}
         </div>
+
+        <SectionCTA />
       </div>
 
       <style>{`
-        .services-grid {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
+        .steps {
+          display: flex;
+          flex-direction: column;
           gap: 16px;
         }
-        .service-card {
-          padding: 36px 28px;
-          background: rgba(255,255,255,0.02);
-          border: 1px solid rgba(255,255,255,0.05);
-          border-radius: 16px;
-          transition: 0.3s;
-          cursor: default;
+        .step {
+          padding: 32px 36px;
         }
-        .service-card:hover {
-          border-color: rgba(255,255,255,0.1);
-          background: rgba(255,255,255,0.03);
+        .step-meta {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          margin-bottom: 16px;
+        }
+        .step-num {
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--accent);
+          letter-spacing: 1px;
+        }
+        .step-days {
+          font-size: 11px;
+          color: var(--muted);
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          font-weight: 500;
         }
         @media (max-width: 900px) {
-          #services { padding: 120px 24px !important; }
-          .services-grid { grid-template-columns: 1fr !important; }
+          #services { padding: 100px 0 !important; }
+          .step { padding: 24px 20px; }
         }
       `}</style>
     </section>
