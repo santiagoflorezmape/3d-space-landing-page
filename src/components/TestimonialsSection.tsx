@@ -27,12 +27,12 @@ export function TestimonialsSection() {
     <section
       id="testimonials"
       ref={sectionRef}
-      style={{ padding: "140px 60px", position: "relative", zIndex: 2 }}
+      style={{ padding: "160px 60px", position: "relative" }}
     >
-      <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
+      <div style={{ maxWidth: 1000, width: "100%", margin: "0 auto" }}>
         <div
           className="reveal"
-          style={{ textAlign: "center", marginBottom: 50 }}
+          style={{ textAlign: "center", marginBottom: 60 }}
         >
           <div
             style={{
@@ -48,7 +48,7 @@ export function TestimonialsSection() {
           </div>
           <div
             style={{
-              fontSize: "clamp(32px, 4.5vw, 52px)",
+              fontSize: "clamp(30px, 4vw, 48px)",
               fontWeight: 800,
               color: "white",
               letterSpacing: -1.5,
@@ -70,17 +70,17 @@ export function TestimonialsSection() {
               <div
                 style={{
                   color: "#a78bfa",
-                  fontSize: 14,
-                  letterSpacing: 3,
+                  fontSize: 13,
+                  letterSpacing: 2,
                   marginBottom: 16,
                 }}
               >
-                ★★★★★
+                &#9733;&#9733;&#9733;&#9733;&#9733;
               </div>
               <blockquote
                 style={{
-                  fontSize: 15,
-                  color: "#e2e0f0",
+                  fontSize: 14,
+                  color: "#c8c6d8",
                   lineHeight: 1.8,
                   fontWeight: 300,
                   fontStyle: "normal",
@@ -90,17 +90,17 @@ export function TestimonialsSection() {
                 {testimonial.quote}
               </blockquote>
               <div
-                style={{ display: "flex", alignItems: "center", gap: 14 }}
+                style={{ display: "flex", alignItems: "center", gap: 12 }}
               >
                 <div
                   style={{
-                    width: 42,
-                    height: 42,
+                    width: 38,
+                    height: 38,
                     borderRadius: "50%",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: 16,
+                    fontSize: 14,
                     fontWeight: 700,
                     color: "white",
                     background: testimonial.gradient,
@@ -128,23 +128,22 @@ export function TestimonialsSection() {
       <style>{`
         .testimonials-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-          gap: 20px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
         }
         .testimonial-card {
-          padding: 36px 32px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(167,139,250,0.15);
-          border-radius: 20px;
-          transition: 0.4s;
-          backdrop-filter: blur(10px);
+          padding: 32px 28px;
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.05);
+          border-radius: 16px;
+          transition: 0.3s;
         }
         .testimonial-card:hover {
-          border-color: rgba(167,139,250,0.3);
-          transform: translateY(-3px);
+          border-color: rgba(255,255,255,0.1);
         }
         @media (max-width: 900px) {
-          #testimonials { padding: 110px 24px !important; }
+          #testimonials { padding: 120px 24px !important; }
+          .testimonials-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </section>

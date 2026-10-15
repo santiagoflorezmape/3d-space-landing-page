@@ -28,14 +28,15 @@ export function HeroSection() {
       id="hero"
       ref={sectionRef}
       style={{
-        padding: "140px 60px 120px",
+        padding: "180px 60px 120px",
         textAlign: "center",
         position: "relative",
-        minHeight: 900,
+        minHeight: "100vh",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        zIndex: 2,
+        justifyContent: "center",
+        gap: 28,
       }}
     >
       <div className="reveal">
@@ -46,14 +47,13 @@ export function HeroSection() {
             gap: 8,
             padding: "8px 20px",
             borderRadius: 99,
-            border: "1px solid rgba(167,139,250,0.15)",
-            background: "rgba(255,255,255,0.04)",
+            border: "1px solid rgba(255,255,255,0.06)",
+            background: "rgba(255,255,255,0.03)",
             fontSize: 12,
             fontWeight: 500,
             color: "#c4b5fd",
             letterSpacing: 1,
             textTransform: "uppercase" as const,
-            backdropFilter: "blur(10px)",
           }}
         >
           <span
@@ -73,12 +73,12 @@ export function HeroSection() {
       <h1
         className="reveal reveal-delay-1"
         style={{
-          fontSize: "clamp(42px, 7vw, 88px)",
-          fontWeight: 900,
-          lineHeight: 1,
-          letterSpacing: -3,
+          fontSize: "clamp(38px, 6vw, 76px)",
+          fontWeight: 800,
+          lineHeight: 1.05,
+          letterSpacing: -2,
           color: "white",
-          maxWidth: 900,
+          maxWidth: 800,
           margin: "0 auto",
         }}
       >
@@ -97,9 +97,9 @@ export function HeroSection() {
       <p
         className="reveal reveal-delay-2"
         style={{
-          fontSize: "clamp(16px, 2vw, 20px)",
+          fontSize: "clamp(15px, 1.8vw, 18px)",
           color: "#9896aa",
-          maxWidth: 560,
+          maxWidth: 540,
           margin: "0 auto",
           lineHeight: 1.7,
           fontWeight: 300,
@@ -111,55 +111,10 @@ export function HeroSection() {
       <div
         className="reveal reveal-delay-3"
         style={{
-          width: "100%",
-          maxWidth: 820,
-          margin: "0 auto",
-          position: "relative",
-          borderRadius: 20,
-          overflow: "hidden",
-          border: "1px solid rgba(167,139,250,0.15)",
-          background: "black",
-          aspectRatio: "16 / 9",
-          boxShadow: "0 20px 80px rgba(124,58,237,0.2)",
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            inset: -2,
-            borderRadius: 22,
-            background:
-              "conic-gradient(from 0deg, #7c3aed, #a78bfa, #c4b5fd, #7c3aed)",
-            zIndex: -1,
-            filter: "blur(20px)",
-            opacity: 0.35,
-            animation: "vslGlow 6s linear infinite",
-          }}
-        />
-        <iframe
-          src="https://www.tella.tv/video/base44-demo-hijl/embed?b=0&title=0&a=0&loop=0&autoPlay=0&t=0&muted=0&wt=0"
-          style={{
-            width: "100%",
-            height: "100%",
-            border: "none",
-            position: "absolute",
-            top: 0,
-            left: 0,
-          }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          loading="lazy"
-          title="Demo video"
-        />
-      </div>
-
-      <div
-        className="reveal reveal-delay-3"
-        style={{
           display: "flex",
-          gap: 16,
+          gap: 14,
           justifyContent: "center",
-          marginTop: 12,
+          marginTop: 8,
           flexWrap: "wrap" as const,
         }}
       >
@@ -188,25 +143,39 @@ export function HeroSection() {
         </button>
       </div>
 
+      <p
+        className="reveal reveal-delay-3"
+        style={{
+          fontSize: 13,
+          color: "#6b6b80",
+          maxWidth: 460,
+          margin: "0 auto",
+          lineHeight: 1.6,
+          fontStyle: "italic",
+        }}
+      >
+        {t.hero.proof}
+      </p>
+
       <div
         className="reveal reveal-delay-4"
         style={{
           display: "flex",
-          gap: 60,
+          gap: 48,
           justifyContent: "center",
-          marginTop: 40,
+          marginTop: 24,
           flexWrap: "wrap" as const,
         }}
       >
         {t.hero.stats.map((stat) => (
           <div key={stat.label} style={{ textAlign: "center" }}>
-            <div style={{ fontSize: 42, fontWeight: 800, color: "white" }}>
+            <div style={{ fontSize: 36, fontWeight: 800, color: "white" }}>
               {stat.num}
               <span style={{ color: "#a78bfa" }}>{stat.accent}</span>
             </div>
             <div
               style={{
-                fontSize: 12,
+                fontSize: 11,
                 color: "#9896aa",
                 marginTop: 4,
                 textTransform: "uppercase" as const,
@@ -222,7 +191,7 @@ export function HeroSection() {
 
       <style>{`
         .hero-btn-primary {
-          padding: 16px 40px;
+          padding: 16px 36px;
           background: #7c3aed;
           color: white;
           border: none;
@@ -235,15 +204,14 @@ export function HeroSection() {
           letter-spacing: 0.2px;
         }
         .hero-btn-primary:hover {
-          background: #a78bfa;
+          background: #6d28d9;
           transform: translateY(-2px);
-          box-shadow: 0 12px 40px rgba(124,58,237,0.5);
         }
         .hero-btn-outline {
-          padding: 16px 40px;
+          padding: 16px 36px;
           background: transparent;
           color: white;
-          border: 1px solid rgba(167,139,250,0.15);
+          border: 1px solid rgba(255,255,255,0.08);
           border-radius: 99px;
           font-size: 15px;
           font-weight: 500;
@@ -252,11 +220,11 @@ export function HeroSection() {
           font-family: inherit;
         }
         .hero-btn-outline:hover {
-          border-color: #a78bfa;
-          background: rgba(167,139,250,0.06);
+          border-color: rgba(255,255,255,0.2);
+          background: rgba(255,255,255,0.03);
         }
         @media (max-width: 900px) {
-          #hero { padding: 120px 24px 80px !important; }
+          #hero { padding: 160px 24px 100px !important; }
         }
       `}</style>
     </section>

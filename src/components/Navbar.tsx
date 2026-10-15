@@ -8,7 +8,6 @@ import { Language } from "@/translations";
 const LANGUAGES: { code: Language; flag: string; label: string }[] = [
   { code: "en", flag: "🇺🇸", label: "EN" },
   { code: "es", flag: "🇪🇸", label: "ES" },
-  { code: "fr", flag: "🇫🇷", label: "FR" },
 ];
 
 export function Navbar() {
@@ -48,18 +47,19 @@ export function Navbar() {
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
-        backdropFilter: "blur(20px)",
-        background: scrolled ? "rgba(3,0,20,0.85)" : "rgba(3,0,20,0.6)",
-        borderBottom: "1px solid rgba(167,139,250,0.15)",
+        backdropFilter: "blur(24px)",
+        background: scrolled
+          ? "rgba(5,5,16,0.92)"
+          : "rgba(5,5,16,0.6)",
+        borderBottom: "1px solid rgba(255,255,255,0.04)",
         transition: "0.4s",
       }}
     >
-      {/* Logo Group */}
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
         <div
           style={{
-            width: 40,
-            height: 40,
+            width: 36,
+            height: 36,
             position: "relative",
             borderRadius: 8,
             overflow: "hidden",
@@ -68,19 +68,18 @@ export function Navbar() {
           <Image
             src="/images/logo.webp"
             alt="Infoproduct Zenith"
-            width={40}
-            height={40}
+            width={36}
+            height={36}
             style={{
               width: "100%",
               height: "100%",
               objectFit: "contain",
-              filter: "drop-shadow(0 0 8px rgba(167,139,250,0.5))",
             }}
           />
         </div>
         <div
           style={{
-            fontSize: 18,
+            fontSize: 17,
             fontWeight: 700,
             letterSpacing: -0.5,
             color: "white",
@@ -90,7 +89,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Nav Links */}
       <ul className="nav-links">
         {navLinks.map((link) => (
           <li key={link.href} style={{ listStyle: "none" }}>
@@ -110,9 +108,7 @@ export function Navbar() {
         ))}
       </ul>
 
-      {/* Nav Right */}
       <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        {/* Language Cycle Toggle */}
         <button
           className="lang-btn"
           type="button"
@@ -162,17 +158,17 @@ export function Navbar() {
           transition: width 0.3s;
         }
         .nav-link:hover {
-          color: #a78bfa;
+          color: white;
         }
         .nav-link:hover::after {
           width: 100%;
         }
         .lang-btn {
-          height: 38px;
+          height: 36px;
           padding: 0 14px;
           border-radius: 99px;
-          border: 1px solid rgba(167,139,250,0.15);
-          background: rgba(255,255,255,0.04);
+          border: 1px solid rgba(255,255,255,0.06);
+          background: rgba(255,255,255,0.03);
           backdrop-filter: blur(10px);
           cursor: pointer;
           display: flex;
@@ -188,9 +184,8 @@ export function Navbar() {
           transition: 0.3s;
         }
         .lang-btn:hover {
-          border-color: #a78bfa;
-          background: rgba(167,139,250,0.1);
-          transform: scale(1.05);
+          border-color: rgba(255,255,255,0.12);
+          background: rgba(255,255,255,0.06);
         }
         .nav-cta-btn {
           padding: 10px 24px;
@@ -206,9 +201,8 @@ export function Navbar() {
           letter-spacing: 0.3px;
         }
         .nav-cta-btn:hover {
-          background: #a78bfa;
+          background: #6d28d9;
           transform: translateY(-1px);
-          box-shadow: 0 8px 30px rgba(124,58,237,0.4);
         }
         @media (max-width: 900px) {
           .nav-links { display: none !important; }

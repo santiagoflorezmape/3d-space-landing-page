@@ -10,23 +10,26 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Infoproduct Zenith",
+  title: "Infoproduct Zenith — Premium Launch Sprint",
   description:
-    "We architect unstoppable growth systems for info-product brands — turning expertise into empires through precision funnels, organic content, and conversion science.",
+    "Turn your audience into a premium program. A 14-day, done-with-you launch: offer, funnel, content plan and the sales calls.",
   metadataBase: new URL("https://infoproduct-zenith.vercel.app"),
   icons: {
-    icon: "/seo/icon.webp",
-    apple: "/seo/icon.webp",
-    shortcut: "/seo/icon.webp",
+    icon: [
+      { url: "/icon.webp", type: "image/webp" },
+      { url: "/seo/icon.webp", type: "image/webp" },
+    ],
+    apple: [{ url: "/icon.webp", type: "image/webp" }],
+    shortcut: [{ url: "/icon.webp", type: "image/webp" }],
   },
   openGraph: {
     type: "website",
-    title: "Infoproduct Zenith — Growth Operating Agency",
+    title: "Infoproduct Zenith — Premium Launch Sprint",
     description:
-      "We architect unstoppable growth systems for info-product brands — turning expertise into empires through precision funnels, organic content, and conversion science.",
+      "Turn your audience into a premium program. A 14-day, done-with-you launch: offer, funnel, content plan and the sales calls.",
     images: [
       {
-        url: "/seo/og.png",
+        url: "/opengraph-image.png",
         width: 2560,
         height: 1440,
         alt: "Infoproduct Zenith",
@@ -35,10 +38,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Infoproduct Zenith — Growth Operating Agency",
+    title: "Infoproduct Zenith — Premium Launch Sprint",
     description:
-      "We architect unstoppable growth systems for info-product brands — turning expertise into empires through precision funnels, organic content, and conversion science.",
-    images: ["/seo/og.png"],
+      "Turn your audience into a premium program. A 14-day, done-with-you launch: offer, funnel, content plan and the sales calls.",
+    images: ["/twitter-image.png"],
   },
 };
 

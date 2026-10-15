@@ -28,9 +28,8 @@ export function CTASection() {
       id="cta"
       ref={sectionRef}
       style={{
-        padding: "140px 60px",
+        padding: "160px 60px",
         position: "relative",
-        zIndex: 2,
         textAlign: "center",
         display: "flex",
         flexDirection: "column",
@@ -52,7 +51,7 @@ export function CTASection() {
         </div>
         <div
           style={{
-            fontSize: "clamp(32px, 4.5vw, 52px)",
+            fontSize: "clamp(28px, 4vw, 44px)",
             fontWeight: 800,
             color: "white",
             letterSpacing: -1.5,
@@ -74,16 +73,29 @@ export function CTASection() {
         </div>
         <p
           style={{
-            fontSize: 16,
+            fontSize: 15,
             color: "#9896aa",
-            maxWidth: 460,
+            maxWidth: 440,
             margin: "0 auto",
             lineHeight: 1.7,
             fontWeight: 300,
-            marginBottom: 36,
+            marginBottom: 20,
           }}
         >
           {t.cta.body}
+        </p>
+        <p
+          style={{
+            fontSize: 13,
+            color: "#6b6b80",
+            maxWidth: 420,
+            margin: "0 auto",
+            lineHeight: 1.6,
+            fontStyle: "italic",
+            marginBottom: 32,
+          }}
+        >
+          {t.cta.guarantee}
         </p>
         <button
           type="button"
@@ -101,49 +113,33 @@ export function CTASection() {
 
       <style>{`
         .cta-box {
-          padding: 80px 60px;
-          border-radius: 32px;
-          border: 1px solid rgba(167,139,250,0.15);
-          background: rgba(124,58,237,0.04);
-          backdrop-filter: blur(20px);
+          padding: 72px 56px;
+          border-radius: 24px;
+          border: 1px solid rgba(255,255,255,0.05);
+          background: rgba(255,255,255,0.02);
           text-align: center;
-          position: relative;
-          overflow: hidden;
-          max-width: 800px;
+          max-width: 720px;
           width: 100%;
         }
-        .cta-box::before {
-          content: "";
-          position: absolute;
-          top: -50%;
-          left: -50%;
-          width: 200%;
-          height: 200%;
-          background: radial-gradient(circle, rgba(124,58,237,0.08), transparent 60%);
-          pointer-events: none;
-        }
         .cta-btn {
-          padding: 18px 48px;
+          padding: 16px 44px;
           background: #7c3aed;
           color: white;
           border: none;
           border-radius: 99px;
-          font-size: 16px;
+          font-size: 15px;
           font-weight: 600;
           cursor: pointer;
           transition: 0.3s;
           font-family: inherit;
-          position: relative;
-          z-index: 1;
         }
         .cta-btn:hover {
-          background: #a78bfa;
+          background: #6d28d9;
           transform: translateY(-2px);
-          box-shadow: 0 12px 40px rgba(124,58,237,0.5);
         }
         @media (max-width: 900px) {
-          .cta-box { padding: 50px 30px !important; }
-          #cta { padding: 110px 24px !important; }
+          .cta-box { padding: 48px 28px !important; }
+          #cta { padding: 120px 24px !important; }
         }
       `}</style>
     </section>

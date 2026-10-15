@@ -27,12 +27,12 @@ export function ServicesSection() {
     <section
       id="services"
       ref={sectionRef}
-      style={{ padding: "140px 60px", position: "relative", zIndex: 2 }}
+      style={{ padding: "160px 60px", position: "relative" }}
     >
-      <div style={{ maxWidth: 1200, width: "100%", margin: "0 auto" }}>
+      <div style={{ maxWidth: 1000, width: "100%", margin: "0 auto" }}>
         <div
           className="reveal"
-          style={{ textAlign: "center", marginBottom: 50 }}
+          style={{ textAlign: "center", marginBottom: 60 }}
         >
           <div
             style={{
@@ -48,7 +48,7 @@ export function ServicesSection() {
           </div>
           <div
             style={{
-              fontSize: "clamp(32px, 4.5vw, 52px)",
+              fontSize: "clamp(30px, 4vw, 48px)",
               fontWeight: 800,
               color: "white",
               letterSpacing: -1.5,
@@ -63,7 +63,7 @@ export function ServicesSection() {
             style={{
               fontSize: 16,
               color: "#9896aa",
-              maxWidth: 500,
+              maxWidth: 480,
               margin: "16px auto 0",
               lineHeight: 1.7,
               fontWeight: 300,
@@ -77,18 +77,20 @@ export function ServicesSection() {
           {t.services.items.map((service, i) => (
             <div
               key={service.title}
-              className={`service-card reveal reveal-delay-${Math.min(i + 1, 5)}`}
+              className={`service-card reveal reveal-delay-${Math.min(i + 1, 4)}`}
             >
               <div
                 style={{
-                  width: 48,
-                  height: 48,
-                  background: "rgba(124,58,237,0.15)",
-                  borderRadius: 14,
+                  width: 44,
+                  height: 44,
+                  background: "rgba(124,58,237,0.1)",
+                  borderRadius: 12,
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: 22,
+                  fontSize: 18,
+                  fontWeight: 800,
+                  color: "#a78bfa",
                   marginBottom: 20,
                 }}
               >
@@ -96,10 +98,10 @@ export function ServicesSection() {
               </div>
               <h3
                 style={{
-                  fontSize: 20,
+                  fontSize: 18,
                   fontWeight: 700,
                   color: "white",
-                  marginBottom: 12,
+                  marginBottom: 10,
                 }}
               >
                 {service.title}
@@ -122,41 +124,23 @@ export function ServicesSection() {
       <style>{`
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
-          gap: 20px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 16px;
         }
         .service-card {
-          padding: 40px 32px;
-          background: rgba(255,255,255,0.04);
-          border: 1px solid rgba(167,139,250,0.15);
-          border-radius: 20px;
-          transition: 0.4s;
+          padding: 36px 28px;
+          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(255,255,255,0.05);
+          border-radius: 16px;
+          transition: 0.3s;
           cursor: default;
-          backdrop-filter: blur(10px);
-          position: relative;
-          overflow: hidden;
-        }
-        .service-card::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: linear-gradient(90deg, transparent, #a78bfa, transparent);
-          opacity: 0;
-          transition: opacity 0.4s;
         }
         .service-card:hover {
-          border-color: #a78bfa;
-          transform: translateY(-4px);
-          background: rgba(167,139,250,0.06);
-        }
-        .service-card:hover::before {
-          opacity: 1;
+          border-color: rgba(255,255,255,0.1);
+          background: rgba(255,255,255,0.03);
         }
         @media (max-width: 900px) {
-          #services { padding: 110px 24px !important; }
+          #services { padding: 120px 24px !important; }
           .services-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>

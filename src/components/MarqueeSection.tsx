@@ -9,19 +9,18 @@ export function MarqueeSection() {
   return (
     <div
       style={{
-        padding: "28px 0",
-        borderTop: "1px solid rgba(167,139,250,0.06)",
-        borderBottom: "1px solid rgba(167,139,250,0.06)",
+        padding: "24px 0",
+        borderTop: "1px solid rgba(255,255,255,0.04)",
+        borderBottom: "1px solid rgba(255,255,255,0.04)",
         overflow: "hidden",
         position: "relative",
-        zIndex: 2,
       }}
     >
       <div
         style={{
           display: "flex",
           gap: 60,
-          animation: "marquee 90s linear infinite",
+          animation: "marquee 200s linear infinite",
           width: "max-content",
         }}
       >
@@ -29,13 +28,13 @@ export function MarqueeSection() {
           <span
             key={`${item}-${i}`}
             style={{
-              fontSize: 14,
+              fontSize: 13,
               color: "#9896aa",
               fontWeight: 500,
               whiteSpace: "nowrap",
               textTransform: "uppercase" as const,
               letterSpacing: 2,
-              opacity: 0.5,
+              opacity: 0.4,
               display: "flex",
               alignItems: "center",
               gap: 12,
@@ -43,8 +42,8 @@ export function MarqueeSection() {
           >
             <span
               style={{
-                width: 4,
-                height: 4,
+                width: 3,
+                height: 3,
                 borderRadius: "50%",
                 background: "#7c3aed",
                 display: "inline-block",

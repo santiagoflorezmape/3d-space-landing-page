@@ -9,9 +9,8 @@ export function Footer() {
     <footer
       style={{
         position: "relative",
-        zIndex: 10,
         padding: "40px 60px",
-        borderTop: "1px solid rgba(167,139,250,0.08)",
+        borderTop: "1px solid rgba(255,255,255,0.04)",
         display: "flex",
         alignItems: "center",
         justifyContent: "space-between",
@@ -19,10 +18,10 @@ export function Footer() {
         gap: 16,
       }}
     >
-      <p style={{ fontSize: 13, color: "#9896aa", fontWeight: 400 }}>
+      <p style={{ fontSize: 13, color: "#6b6b80", fontWeight: 400 }}>
         {t.footer.copyright}
       </p>
-      <p style={{ fontSize: 13, color: "#9896aa", fontWeight: 400 }}>
+      <p style={{ fontSize: 13, color: "#6b6b80", fontWeight: 400 }}>
         {t.footer.tagline}{" "}
         <a
           href="#"

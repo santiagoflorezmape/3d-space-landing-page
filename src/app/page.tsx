@@ -1,4 +1,3 @@
-import { SpaceBackground } from "@/components/SpaceBackground";
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { MarqueeSection } from "@/components/MarqueeSection";
@@ -11,7 +10,6 @@ import { Footer } from "@/components/Footer";
 export default function Home() {
   return (
     <>
-      <SpaceBackground />
       <Navbar />
       <HeroSection />
       <MarqueeSection />
