@@ -2,7 +2,7 @@ export const translations = {
   hero: {
     badge: "For coaches & experts who create content",
     titlePre: "Turn your expertise into a premium program that sells.",
-    sub: "Without building funnels from scratch, writing sales copy alone, or sacrificing your evenings to DM outreach.",
+    sub: "...without building funnels from scratch, writing sales copy alone, or sacrificing your evenings to DM outreach.",
     btn: "Apply Now →",
   },
   process: {
