@@ -2,7 +2,7 @@ export const translations = {
   hero: {
     badge: "For coaches & experts who create content",
     titlePre: "Turn your expertise into a premium program that sells.",
-    sub: "You've built the audience and the trust. Now turn that into a premium offer with paying members — without building funnels from scratch, writing sales copy alone, or sacrificing your evenings to DM outreach.",
+    sub: "Without building funnels from scratch, writing sales copy alone, or sacrificing your evenings to DM outreach.",
     btn: "Apply Now →",
   },
   process: {
@@ -59,6 +59,7 @@ export const translations = {
     stats: [
       { value: "5+", label: "niches worked across" },
       { value: "$200K+", label: "collected across launches and closes" },
+      { value: "14", label: "days from strategy to live launch" },
     ],
     body: "From real estate to language learning to fitness and e-commerce — we've built premium offers, run launches, and closed sales across industries. We've closed everything from $49/month memberships to $5,000/year masterminds.",
     chips: ["Real estate", "Language learning", "Fitness", "E-commerce"],
