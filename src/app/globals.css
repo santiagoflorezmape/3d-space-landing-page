@@ -227,7 +227,7 @@ h2.wide {
 .lead {
   font-size: clamp(16px, 1.5vw, 19px);
   color: rgb(179, 176, 199);
-  max-width: 560px;
+  max-width: 680px;
 }
 
 /* ---- Button ---- */
@@ -294,7 +294,7 @@ h2.wide {
   margin-top: 64px;
 }
 
-/* ---- Hero ---- */
+/* ---- Hero (centered) ---- */
 #hero {
   min-height: 100vh;
   display: flex;
@@ -305,13 +305,14 @@ h2.wide {
 .hero-inner {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
 }
 
 #hero h1 {
   font-size: clamp(40px, 5.4vw, 78px);
   line-height: 1.02;
-  max-width: 800px;
+  max-width: 900px;
   margin-bottom: 28px;
 }
 
@@ -321,29 +322,26 @@ h2.wide {
 
 .proofline {
   margin-top: 36px;
-  max-width: 520px;
+  max-width: 640px;
   font-size: 14px;
   color: var(--muted);
-  padding-left: 18px;
-  border-left: 1px solid var(--accent-d);
+  text-align: center;
 }
 
-/* ---- VSL Placeholder ---- */
+/* ---- VSL Embed ---- */
 .vsl-container {
   width: 100%;
-  max-width: 640px;
+  max-width: 720px;
   margin-top: 40px;
 }
 
-.vsl-placeholder {
-  aspect-ratio: 16 / 9;
+.vsl-embed {
+  position: relative;
+  padding-bottom: 56.25%;
   border-radius: 22px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border: 1px dashed rgba(184, 168, 240, 0.2);
+  overflow: hidden;
   background: rgba(139, 115, 230, 0.03);
+  border: 1px solid var(--line);
 }
 
 /* ---- Problem ---- */
@@ -501,10 +499,16 @@ h2.wide {
   color: var(--accent);
 }
 
-.you-do {
-  padding: 44px 38px;
+.deliver-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
   position: sticky;
   top: 110px;
+}
+
+.you-do {
+  padding: 44px 38px;
 }
 
 .you-do h3 {
@@ -517,70 +521,64 @@ h2.wide {
   font-size: 15px;
 }
 
-.hours {
-  margin-top: 32px;
-  padding-top: 28px;
-  border-top: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
+/* ---- Guarantee (inside deliver sidebar) ---- */
+.guarantee {
+  padding: 44px 38px;
+  border-color: rgba(184, 168, 240, 0.28);
+  background: rgba(139, 115, 230, 0.06);
 }
 
-.hours b {
-  font-family: var(--serif);
-  font-size: 68px;
-  line-height: 1;
-  font-weight: 500;
-  color: var(--ink);
+.guarantee h3 {
+  font-size: 32px;
+  margin-bottom: 16px;
 }
 
-.hours span {
-  font-size: 12px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-top: 8px;
-  font-weight: 500;
+.guarantee p {
+  color: rgb(196, 193, 214);
+  font-size: 15.5px;
 }
 
 /* ---- Proof ---- */
-.proof-card {
-  margin-top: 56px;
-  padding: 56px;
+.proof-stats {
   display: grid;
-  grid-template-columns: 0.9fr 1.3fr;
-  gap: 56px;
-  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 56px;
+  margin-bottom: 32px;
 }
 
-.proof-stat {
+.proof-stat-item {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  text-align: center;
 }
 
-.proof-stat b {
+.proof-stat-item b {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(84px, 10vw, 150px);
+  font-size: clamp(48px, 6vw, 80px);
   line-height: 0.9;
   color: var(--ink);
   letter-spacing: -0.03em;
 }
 
-.proof-stat span {
+.proof-stat-item span {
   font-size: 12px;
   letter-spacing: 2.4px;
   text-transform: uppercase;
   color: var(--accent);
   font-weight: 600;
-  max-width: 240px;
-  line-height: 1.6;
 }
 
-.proof-body p {
+.proof-card {
+  padding: 44px;
+}
+
+.proof-card p {
   font-family: var(--serif);
-  font-size: clamp(22px, 2.2vw, 30px);
-  line-height: 1.35;
+  font-size: clamp(20px, 2vw, 26px);
+  line-height: 1.4;
   color: rgb(222, 218, 240);
   font-weight: 400;
 }
@@ -660,23 +658,6 @@ h2.wide {
 
 .fit.no h3 {
   color: rgb(179, 176, 199);
-}
-
-/* ---- Guarantee ---- */
-.guarantee {
-  padding: 44px 40px;
-  border-color: rgba(184, 168, 240, 0.28);
-  background: rgba(139, 115, 230, 0.06);
-}
-
-.guarantee h3 {
-  font-size: 32px;
-  margin-bottom: 16px;
-}
-
-.guarantee p {
-  color: rgb(196, 193, 214);
-  font-size: 15.5px;
 }
 
 /* ---- FAQ ---- */
@@ -812,12 +793,13 @@ footer a:hover {
   #hero { padding: 130px 0 110px; }
   .problem-grid,
   .fit-grid,
-  .deliver-grid,
-  .proof-card { grid-template-columns: 1fr; }
+  .deliver-grid { grid-template-columns: 1fr; }
+  .proof-stats { grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .proof-stat-item b { font-size: clamp(36px, 8vw, 52px); }
+  .proof-card { padding: 34px 26px; }
   .step { grid-template-columns: 1fr; gap: 14px; padding: 34px 0; }
   .step-meta { flex-direction: row; align-items: baseline; gap: 18px; }
-  .proof-card { padding: 34px 26px; gap: 30px; }
-  .you-do { position: static; }
+  .deliver-sidebar { position: static; }
   details p { padding-right: 0; }
   footer { padding: 30px 24px 60px; flex-direction: column; text-align: center; }
 }

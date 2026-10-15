@@ -37,14 +37,16 @@ export function DeliverSection() {
               </li>
             ))}
           </ol>
-          <aside className="card you-do reveal d2">
-            <h3>{t.deliver.youDoTitle}</h3>
-            <p>{t.deliver.youDoText}</p>
-            <div className="hours">
-              <b>{t.deliver.youDoHours}</b>
-              <span>{t.deliver.youDoHoursLabel}</span>
-            </div>
-          </aside>
+          <div className="deliver-sidebar">
+            <aside className="card you-do reveal d2">
+              <h3>{t.deliver.youDoTitle}</h3>
+              <p>{t.deliver.youDoText}</p>
+            </aside>
+            <aside className="card guarantee reveal d3">
+              <h3>{t.deliver.guaranteeTitle}</h3>
+              <p>{t.deliver.guaranteeText}</p>
+            </aside>
+          </div>
         </div>
         <SectionCTA />
       </div>

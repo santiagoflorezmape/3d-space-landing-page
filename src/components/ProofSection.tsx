@@ -29,19 +29,21 @@ export function ProofSection() {
       <div className="container">
         <div className="eyebrow reveal">{t.proof.eyebrow}</div>
         <h2 className="reveal d1 wide">{t.proof.title}</h2>
-        <div className="card proof-card reveal d2">
-          <div className="proof-stat">
-            <b>{t.proof.stat}</b>
-            <span>{t.proof.statLabel}</span>
-          </div>
-          <div className="proof-body">
-            <p>{t.proof.body}</p>
-            <ul className="chips">
-              {t.proof.chips.map((chip) => (
-                <li key={chip}>{chip}</li>
-              ))}
-            </ul>
-          </div>
+        <div className="proof-stats reveal d2">
+          {t.proof.stats.map((stat) => (
+            <div key={stat.label} className="proof-stat-item">
+              <b>{stat.value}</b>
+              <span>{stat.label}</span>
+            </div>
+          ))}
+        </div>
+        <div className="card proof-card reveal d3">
+          <p>{t.proof.body}</p>
+          <ul className="chips">
+            {t.proof.chips.map((chip) => (
+              <li key={chip}>{chip}</li>
+            ))}
+          </ul>
         </div>
         <SectionCTA />
       </div>

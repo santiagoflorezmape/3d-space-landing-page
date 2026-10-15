@@ -6,7 +6,6 @@ import { ProcessSection } from "@/components/ProcessSection";
 import { DeliverSection } from "@/components/DeliverSection";
 import { ProofSection } from "@/components/ProofSection";
 import { FitSection } from "@/components/FitSection";
-import { GuaranteeSection } from "@/components/GuaranteeSection";
 import { FAQSection } from "@/components/FAQSection";
 import { CTASection } from "@/components/CTASection";
 import { Footer } from "@/components/Footer";
@@ -25,7 +24,6 @@ export default function Home() {
         <DeliverSection />
         <ProofSection />
         <FitSection />
-        <GuaranteeSection />
         <FAQSection />
         <CTASection />
       </main>

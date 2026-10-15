@@ -34,32 +34,20 @@ export function HeroSection() {
         <p className="lead reveal d2">{t.hero.sub}</p>
 
         <div className="reveal d3 vsl-container">
-          <div className="vsl-placeholder">
-            <svg
-              width="52"
-              height="52"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="var(--accent)"
-              strokeWidth="1.2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              style={{ opacity: 0.6 }}
-            >
-              <polygon points="5 3 19 12 5 21 5 3" />
-            </svg>
-            <span
+          <div className="vsl-embed">
+            <iframe
+              src="https://www.tella.tv/video/base44-demo-hijl/embed?b=0&title=0&a=1&loop=0&t=0&muted=0&wt=1"
+              allowFullScreen
               style={{
-                fontSize: 13,
-                color: "var(--muted)",
-                marginTop: 12,
-                fontWeight: 500,
-                letterSpacing: 1,
-                textTransform: "uppercase" as const,
+                position: "absolute",
+                top: 0,
+                left: 0,
+                width: "100%",
+                height: "100%",
+                border: 0,
+                borderRadius: 22,
               }}
-            >
-              {t.vsl.placeholder}
-            </span>
+            />
           </div>
         </div>
 
