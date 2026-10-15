@@ -1,13 +1,12 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { translations as t } from "@/translations";
 import { SectionCTA } from "./SectionCTA";
 
 export function ProcessSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const [dayNum, setDayNum] = useState(0);
-  const { t } = useLanguage();
 
   useEffect(() => {
     const section = sectionRef.current;

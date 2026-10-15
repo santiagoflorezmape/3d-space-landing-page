@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
-import { LanguageProvider } from "@/contexts/LanguageContext";
+
 
 const heading = Cormorant_Garamond({
   subsets: ["latin"],
@@ -61,7 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${heading.variable} ${body.variable} antialiased`}>
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        {children}
       </body>
     </html>
   );

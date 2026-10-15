@@ -1,7 +1,7 @@
 import { Navbar } from "@/components/Navbar";
 import { HeroSection } from "@/components/HeroSection";
 import { MarqueeSection } from "@/components/MarqueeSection";
-import { ProblemSection } from "@/components/ProblemSection";
+
 import { ProcessSection } from "@/components/ProcessSection";
 import { DeliverSection } from "@/components/DeliverSection";
 import { ProofSection } from "@/components/ProofSection";
@@ -19,7 +19,6 @@ export default function Home() {
       <main>
         <HeroSection />
         <MarqueeSection />
-        <ProblemSection />
         <ProcessSection />
         <DeliverSection />
         <ProofSection />

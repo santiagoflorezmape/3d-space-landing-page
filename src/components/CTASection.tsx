@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { translations as t } from "@/translations";
 
 export function CTASection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const { t } = useLanguage();
 
   useEffect(() => {
     const section = sectionRef.current;

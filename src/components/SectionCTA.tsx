@@ -1,9 +1,6 @@
-"use client";
-
-import { useLanguage } from "@/contexts/LanguageContext";
+import { translations as t } from "@/translations";
 
 export function SectionCTA() {
-  const { t } = useLanguage();
 
   return (
     <div className="section-cta">

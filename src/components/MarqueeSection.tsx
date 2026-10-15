@@ -1,9 +1,6 @@
-"use client";
-
-import { useLanguage } from "@/contexts/LanguageContext";
+import { translations as t } from "@/translations";
 
 export function MarqueeSection() {
-  const { t } = useLanguage();
   const items = t.marquee.items;
 
   return (

@@ -1,11 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { translations as t } from "@/translations";
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const { t } = useLanguage();
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -27,10 +26,7 @@ export function HeroSection() {
     <section id="hero" ref={sectionRef}>
       <div className="container hero-inner">
         <div className="eyebrow reveal">{t.hero.badge}</div>
-        <h1 className="reveal d1">
-          {t.hero.titlePre}{" "}
-          <span className="soft">{t.hero.titleSoft}</span>
-        </h1>
+        <h1 className="reveal d1">{t.hero.titlePre}</h1>
         <p className="lead reveal d2">{t.hero.sub}</p>
 
         <div className="reveal d3 vsl-container">
@@ -62,7 +58,6 @@ export function HeroSection() {
           </a>
         </div>
 
-        <p className="proofline reveal d4">{t.hero.proof}</p>
       </div>
     </section>
   );

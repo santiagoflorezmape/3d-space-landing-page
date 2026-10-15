@@ -1,9 +1,8 @@
 "use client";
 
-import { useLanguage } from "@/contexts/LanguageContext";
+import { translations as t } from "@/translations";
 
 export function Footer() {
-  const { t } = useLanguage();
 
   return (
     <footer>
