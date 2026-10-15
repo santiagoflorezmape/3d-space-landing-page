@@ -6,22 +6,15 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Language } from "@/translations";
 
 const LANGUAGES: { code: Language; flag: string; label: string }[] = [
-  { code: "en", flag: "🇺🇸", label: "EN" },
-  { code: "es", flag: "🇪🇸", label: "ES" },
+  { code: "en", flag: "\u{1F1FA}\u{1F1F8}", label: "EN" },
+  { code: "es", flag: "\u{1F1EA}\u{1F1F8}", label: "ES" },
 ];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
-  const { language, setLanguage, t } = useLanguage();
+  const { language, setLanguage } = useLanguage();
 
   const currentLang = LANGUAGES.find((l) => l.code === language)!;
-
-  const navLinks = [
-    { text: t.nav.services, href: "#services" },
-    { text: t.nav.about, href: "#about" },
-    { text: t.nav.proof, href: "#testimonials" },
-    { text: t.nav.contact, href: "#cta" },
-  ];
 
   const cycleLanguage = () => {
     const currentIndex = LANGUAGES.findIndex((l) => l.code === language);
@@ -48,9 +41,7 @@ export function Navbar() {
         alignItems: "center",
         justifyContent: "space-between",
         backdropFilter: "blur(24px)",
-        background: scrolled
-          ? "rgba(5,5,16,0.92)"
-          : "rgba(5,5,16,0.6)",
+        background: scrolled ? "rgba(5,5,16,0.92)" : "rgba(5,5,16,0.6)",
         borderBottom: "1px solid rgba(255,255,255,0.04)",
         transition: "0.4s",
       }}
@@ -89,80 +80,17 @@ export function Navbar() {
         </div>
       </div>
 
-      <ul className="nav-links">
-        {navLinks.map((link) => (
-          <li key={link.href} style={{ listStyle: "none" }}>
-            <a
-              href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                document
-                  .querySelector(link.href)
-                  ?.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="nav-link"
-            >
-              {link.text}
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <button
-          className="lang-btn"
-          type="button"
-          onClick={cycleLanguage}
-          title="Switch language"
-        >
-          <span>{currentLang.flag}</span>
-          <span>{currentLang.label}</span>
-        </button>
-
-        <a
-          href="https://cal.com/santiagoflorezmape/infoproduct-zenith"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nav-cta-btn"
-        >
-          {t.nav.getStarted}
-        </a>
-      </div>
+      <button
+        className="lang-btn"
+        type="button"
+        onClick={cycleLanguage}
+        title="Switch language"
+      >
+        <span>{currentLang.flag}</span>
+        <span>{currentLang.label}</span>
+      </button>
 
       <style>{`
-        .nav-links {
-          display: flex;
-          gap: 32px;
-          list-style: none;
-          margin: 0;
-          padding: 0;
-        }
-        .nav-link {
-          color: #9896aa;
-          text-decoration: none;
-          font-size: 13px;
-          font-weight: 500;
-          letter-spacing: 0.5px;
-          text-transform: uppercase;
-          transition: color 0.3s;
-          position: relative;
-        }
-        .nav-link::after {
-          content: "";
-          position: absolute;
-          bottom: -4px;
-          left: 0;
-          width: 0;
-          height: 1.5px;
-          background: #a78bfa;
-          transition: width 0.3s;
-        }
-        .nav-link:hover {
-          color: white;
-        }
-        .nav-link:hover::after {
-          width: 100%;
-        }
         .lang-btn {
           height: 36px;
           padding: 0 14px;
@@ -187,26 +115,8 @@ export function Navbar() {
           border-color: rgba(255,255,255,0.12);
           background: rgba(255,255,255,0.06);
         }
-        .nav-cta-btn {
-          padding: 10px 24px;
-          background: #7c3aed;
-          color: white;
-          border: none;
-          border-radius: 99px;
-          font-size: 13px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: 0.3s;
-          text-decoration: none;
-          letter-spacing: 0.3px;
-        }
-        .nav-cta-btn:hover {
-          background: #6d28d9;
-          transform: translateY(-1px);
-        }
         @media (max-width: 900px) {
-          .nav-links { display: none !important; }
-          .nav-cta-btn { display: none !important; }
+          nav { padding-left: 24px !important; padding-right: 24px !important; }
         }
       `}</style>
     </nav>

@@ -95,7 +95,7 @@ export function CTASection() {
             marginBottom: 32,
           }}
         >
-          {t.cta.guarantee}
+          {t.cta.note}
         </p>
         <button
           type="button"

@@ -3,26 +3,23 @@ export type Language = "en" | "es";
 export const translations = {
   en: {
     nav: {
-      services: "How It Works",
-      about: "What You Get",
-      proof: "Proof",
-      contact: "Book a Call",
       getStarted: "Book a Call",
     },
     hero: {
       badge: "For coaches and experts with an audience",
       headingPre: "Turn your audience into a",
       headingAccent: "premium program",
-      sub: "A 14-day, done-with-you launch: offer, funnel, content plan and the sales calls. Your expertise turns into $5K+ enrollments without you living in your DMs.",
+      sub: "A 14-day, done-with-you launch: offer, funnel, content plan and the sales calls. Your expertise turns into premium enrollments without you living in your DMs.",
       cta1: "Book a 20-Minute Launch Call →",
       cta2: "See How It Works ↓",
-      proof: "I helped launch a land-wholesaling mentorship that collected ~$50K in its first week. I built the offer and funnel and ran the sales calls.",
+      proof: "We helped launch a land-wholesaling mentorship that collected ~$50K in its first week. We built the offer, funnel and ran the sales calls.",
       stats: [
-        { num: "50", accent: "K+", label: "Launch Revenue" },
-        { num: "14", accent: "", label: "Day Sprint" },
-        { num: "5", accent: "K+", label: "Per Enrollment" },
+        { num: "14", accent: "-Day", label: "Launch Sprint" },
         { num: "8", accent: "hrs", label: "Your Time Total" },
       ],
+    },
+    vsl: {
+      placeholder: "VSL Coming Soon",
     },
     marquee: {
       items: [
@@ -38,13 +35,14 @@ export const translations = {
         "Onboarding",
         "Landing Pages",
         "Story Sequences",
+        "Product Development",
       ],
     },
     services: {
       eyebrow: "How It Works",
       headingLine1: "From zero to launched",
       headingLine2: "in 14 days",
-      sub: "You have the expertise and the audience. What’s missing is the system. Launches are what I do.",
+      sub: "You have the expertise and the audience. What’s missing is the system. Launches are what we do.",
       items: [
         {
           icon: "1",
@@ -54,7 +52,7 @@ export const translations = {
         {
           icon: "2",
           title: "Offer & Assets",
-          desc: "Days 3–6. We lock a premium offer ($2K–$10K), write a short VSL script, and build the application page, booking and payment flow.",
+          desc: "Days 3–6. We lock a premium offer, write a short VSL script, and build the application page, booking and payment flow. If your product needs building or polishing, we help with that too.",
         },
         {
           icon: "3",
@@ -64,7 +62,7 @@ export const translations = {
         {
           icon: "4",
           title: "Launch & Close",
-          desc: "Day 11+. The early-access list gets first dibs, then your full audience. I take the sales calls, collect payment on the call and onboard your new members.",
+          desc: "Day 11+. The early-access list gets first dibs, then your full audience. We take the sales calls, collect payment on the call and onboard your new members.",
         },
       ],
     },
@@ -72,14 +70,15 @@ export const translations = {
       eyebrow: "What You Get",
       headingLine1: "Everything you need.",
       headingLine2: "Nothing you don’t.",
-      body: "Your part: film one short video, post stories and approve things within 24 hours. That’s about 8 hours over two weeks. I handle everything else.",
+      body: "Your part: film one short video, post stories and approve things within 24 hours. That’s about 8 hours over two weeks. We handle everything else.",
       values: [
         "Offer design — who it’s for, the transformation, structure, price and bonuses",
         "VSL script (3–6 min) and all launch copy: page, emails, stories, posts",
         "Application, booking, payment and DM-tracking setup",
         "A day-by-day launch calendar",
-        "Sales calls run by me, with payment collected on the call",
+        "Sales calls run by our team, with payment collected on the call",
         "Onboarding structure for your new members",
+        "Product creation or refinement support if needed",
       ],
       forYou: [
         "You have an audience and real expertise people already ask you about",
@@ -94,75 +93,45 @@ export const translations = {
     testimonials: {
       eyebrow: "Proof",
       headingLine1: "Built and tested",
-      headingLine2: "on real launches.",
-      items: [
-        {
-          quote: "~$50K collected in the first launch week for a land-wholesaling mentorship. Santiago ran market research, built the offer, VSL script, landing page and application funnel, and ran the sales calls.",
-          initials: "JD",
-          gradient: "linear-gradient(135deg, #7c3aed, #a78bfa)",
-          name: "Jonathan Duong",
-          role: "Founder, High Value Inner Circle",
-        },
-        {
-          quote: "Over $100K CC in sales for a wholesaling mentorship offer.",
-          initials: "JR",
-          gradient: "linear-gradient(135deg, #a78bfa, #c4b5fd)",
-          name: "Joe Reilly",
-          role: "Co-founder, Enterprise Elite",
-        },
-        {
-          quote: "$18K+ CC in a week for a fitness offer in the Spanish market.",
-          initials: "GB",
-          gradient: "linear-gradient(135deg, #c4b5fd, #7c3aed)",
-          name: "Gianfranco Benavides",
-          role: "CEO, Fuerza Ejecutiva",
-        },
-        {
-          quote: "Monthly revenue doubled in 90 days.",
-          initials: "JK",
-          gradient: "linear-gradient(135deg, #c4b5fd, #7c3aed)",
-          name: "JinYoung Kim",
-          role: "CEO, Bring Me In Korean",
-        },
-      ],
+      headingLine2: "on a real launch.",
+      quote: "~$50K collected in the first launch week for a land-wholesaling mentorship. We ran market research, built the offer, VSL script, landing page and application funnel, and ran the sales calls.",
+      name: "Launch Case Study",
+      role: "Land Wholesaling Mentorship",
     },
     cta: {
       eyebrow: "Ready to launch?",
       headingLine1: "Have an audience and a skill",
       headingAccent: "people pay for?",
-      body: "From $3,000 for the 14-day sprint (or 2 × $1,500). Performance-based options available when I run your sales calls. I take on two launches a month so every one gets my full attention.",
-      guarantee: "If you deliver your part on time and we’re not launch-ready by Day 14, I keep working at no extra cost until we are.",
+      body: "Book a free 20-minute call. We’ll discuss your audience, your expertise, and map out exactly how a 14-day launch sprint would work for your business.",
+      note: "We take on a limited number of launches each month so every one gets our full attention.",
       btn: "Book a 20-Minute Launch Call →",
     },
     footer: {
       copyright: "© 2026 Infoproduct Zenith. All rights reserved.",
-      tagline: "Two launches a month. Full attention on yours.",
+      tagline: "Limited launches per month. Full attention on yours.",
       backToTop: "Back to top ↑",
     },
   },
 
   es: {
     nav: {
-      services: "Cómo Funciona",
-      about: "Qué Incluye",
-      proof: "Resultados",
-      contact: "Reservar Llamada",
       getStarted: "Reservar Llamada",
     },
     hero: {
       badge: "Para coaches y expertos con audiencia",
       headingPre: "Convierte tu audiencia en un",
       headingAccent: "programa premium",
-      sub: "Un lanzamiento de 14 días, hecho contigo: oferta, embudo, plan de contenido y las llamadas de venta. Tu expertise se convierte en inscripciones de $5K+ sin vivir en tus DMs.",
+      sub: "Un lanzamiento de 14 días, hecho contigo: oferta, embudo, plan de contenido y las llamadas de venta. Tu expertise se convierte en inscripciones premium sin vivir en tus DMs.",
       cta1: "Reserva una Llamada de 20 Min →",
       cta2: "Mira Cómo Funciona ↓",
-      proof: "Ayudé a lanzar una mentoría de wholesaling de terrenos que recaudó ~$50K en su primera semana. Construí la oferta y el embudo y realicé las llamadas de venta.",
+      proof: "Ayudamos a lanzar una mentoría de wholesaling de terrenos que recaudó ~$50K en su primera semana. Construimos la oferta, el embudo y realizamos las llamadas de venta.",
       stats: [
-        { num: "50", accent: "K+", label: "Ingresos de Lanzamiento" },
         { num: "14", accent: "", label: "Días de Sprint" },
-        { num: "5", accent: "K+", label: "Por Inscripción" },
         { num: "8", accent: "hrs", label: "Tu Tiempo Total" },
       ],
+    },
+    vsl: {
+      placeholder: "VSL Próximamente",
     },
     marquee: {
       items: [
@@ -178,13 +147,14 @@ export const translations = {
         "Onboarding",
         "Landing Pages",
         "Secuencias de Stories",
+        "Desarrollo de Producto",
       ],
     },
     services: {
       eyebrow: "Cómo Funciona",
       headingLine1: "De cero a lanzado",
       headingLine2: "en 14 días",
-      sub: "Tienes la expertise y la audiencia. Lo que falta es el sistema. Los lanzamientos son lo que hago.",
+      sub: "Tienes la expertise y la audiencia. Lo que falta es el sistema. Los lanzamientos son lo que hacemos.",
       items: [
         {
           icon: "1",
@@ -194,7 +164,7 @@ export const translations = {
         {
           icon: "2",
           title: "Oferta & Activos",
-          desc: "Días 3–6. Definimos una oferta premium ($2K–$10K), escribimos un guion VSL corto y construimos la página de aplicación, reservas y flujo de pago.",
+          desc: "Días 3–6. Definimos una oferta premium, escribimos un guion VSL corto y construimos la página de aplicación, reservas y flujo de pago. Si tu producto necesita construirse o pulirse, también ayudamos con eso.",
         },
         {
           icon: "3",
@@ -204,7 +174,7 @@ export const translations = {
         {
           icon: "4",
           title: "Lanzar & Cerrar",
-          desc: "Día 11+. La lista de acceso anticipado tiene prioridad, luego tu audiencia completa. Yo tomo las llamadas de venta, cobro en la llamada e incorporo a tus nuevos miembros.",
+          desc: "Día 11+. La lista de acceso anticipado tiene prioridad, luego tu audiencia completa. Tomamos las llamadas de venta, cobramos en la llamada e incorporamos a tus nuevos miembros.",
         },
       ],
     },
@@ -212,14 +182,15 @@ export const translations = {
       eyebrow: "Qué Incluye",
       headingLine1: "Todo lo que necesitas.",
       headingLine2: "Nada que no.",
-      body: "Tu parte: graba un video corto, publica stories y aprueba cosas en 24 horas. Son unas 8 horas en dos semanas. Yo me encargo de todo lo demás.",
+      body: "Tu parte: graba un video corto, publica stories y aprueba cosas en 24 horas. Son unas 8 horas en dos semanas. Nosotros nos encargamos de todo lo demás.",
       values: [
         "Diseño de oferta — para quién es, la transformación, estructura, precio y bonos",
         "Guion VSL (3–6 min) y todo el copy del lanzamiento: página, emails, stories, posts",
         "Configuración de aplicación, reservas, pagos y seguimiento de DMs",
         "Calendario de lanzamiento día por día",
-        "Llamadas de venta realizadas por mí, con pago cobrado en la llamada",
+        "Llamadas de venta realizadas por nuestro equipo, con pago cobrado en la llamada",
         "Estructura de onboarding para tus nuevos miembros",
+        "Soporte en creación o refinamiento de producto si es necesario",
       ],
       forYou: [
         "Tienes una audiencia y expertise real que la gente ya te pregunta",
@@ -234,49 +205,22 @@ export const translations = {
     testimonials: {
       eyebrow: "Resultados",
       headingLine1: "Construido y probado",
-      headingLine2: "en lanzamientos reales.",
-      items: [
-        {
-          quote: "~$50K recaudados en la primera semana de lanzamiento para una mentoría de wholesaling de terrenos. Santiago hizo la investigación de mercado, construyó la oferta, guion VSL, landing page y embudo de aplicación, y realizó las llamadas de venta.",
-          initials: "JD",
-          gradient: "linear-gradient(135deg, #7c3aed, #a78bfa)",
-          name: "Jonathan Duong",
-          role: "Fundador, High Value Inner Circle",
-        },
-        {
-          quote: "Más de $100K CC en ventas para una oferta de mentoría en wholesaling.",
-          initials: "JR",
-          gradient: "linear-gradient(135deg, #a78bfa, #c4b5fd)",
-          name: "Joe Reilly",
-          role: "Co-fundador, Enterprise Elite",
-        },
-        {
-          quote: "$18K+ CC en una semana para una oferta de fitness en el mercado hispano.",
-          initials: "GB",
-          gradient: "linear-gradient(135deg, #c4b5fd, #7c3aed)",
-          name: "Gianfranco Benavides",
-          role: "CEO, Fuerza Ejecutiva",
-        },
-        {
-          quote: "Los ingresos mensuales se duplicaron en 90 días.",
-          initials: "JK",
-          gradient: "linear-gradient(135deg, #c4b5fd, #7c3aed)",
-          name: "JinYoung Kim",
-          role: "CEO, Bring Me In Korean",
-        },
-      ],
+      headingLine2: "en un lanzamiento real.",
+      quote: "~$50K recaudados en la primera semana de lanzamiento para una mentoría de wholesaling de terrenos. Hicimos la investigación de mercado, construimos la oferta, guion VSL, landing page y embudo de aplicación, y realizamos las llamadas de venta.",
+      name: "Caso de Estudio",
+      role: "Mentoría de Wholesaling de Terrenos",
     },
     cta: {
       eyebrow: "¿Listo para lanzar?",
       headingLine1: "¿Tienes una audiencia y una habilidad",
       headingAccent: "por la que pagan?",
-      body: "Desde $3,000 por el sprint de 14 días (o 2 × $1,500). Opciones basadas en rendimiento disponibles cuando yo hago tus llamadas de venta. Tomo dos lanzamientos al mes para darle toda mi atención a cada uno.",
-      guarantee: "Si cumples tu parte a tiempo y no estamos listos para lanzar en el Día 14, sigo trabajando sin costo extra hasta que lo estemos.",
+      body: "Reserva una llamada gratuita de 20 minutos. Hablaremos sobre tu audiencia, tu expertise y mapearemos exactamente cómo un sprint de lanzamiento de 14 días funcionaría para tu negocio.",
+      note: "Tomamos un número limitado de lanzamientos al mes para darle toda nuestra atención a cada uno.",
       btn: "Reserva una Llamada de 20 Min →",
     },
     footer: {
       copyright: "© 2026 Infoproduct Zenith. Todos los derechos reservados.",
-      tagline: "Dos lanzamientos al mes. Toda la atención en el tuyo.",
+      tagline: "Lanzamientos limitados por mes. Toda la atención en el tuyo.",
       backToTop: "Volver arriba ↑",
     },
   },

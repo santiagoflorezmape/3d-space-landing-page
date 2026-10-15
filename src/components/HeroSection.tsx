@@ -143,8 +143,31 @@ export function HeroSection() {
         </button>
       </div>
 
+      {/* VSL Video Embed — replace the src below with your VSL URL */}
+      <div
+        className="reveal reveal-delay-3 vsl-container"
+      >
+        <div className="vsl-placeholder">
+          <svg
+            width="48"
+            height="48"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#a78bfa"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <polygon points="5 3 19 12 5 21 5 3" />
+          </svg>
+          <span style={{ fontSize: 14, color: "#6b6b80", marginTop: 12, fontWeight: 500 }}>
+            {t.vsl.placeholder}
+          </span>
+        </div>
+      </div>
+
       <p
-        className="reveal reveal-delay-3"
+        className="reveal reveal-delay-4"
         style={{
           fontSize: 13,
           color: "#6b6b80",
@@ -222,6 +245,21 @@ export function HeroSection() {
         .hero-btn-outline:hover {
           border-color: rgba(255,255,255,0.2);
           background: rgba(255,255,255,0.03);
+        }
+        .vsl-container {
+          width: 100%;
+          max-width: 720px;
+          margin: 8px auto 0;
+        }
+        .vsl-placeholder {
+          aspect-ratio: 16 / 9;
+          border-radius: 16px;
+          border: 1px dashed rgba(255,255,255,0.08);
+          background: rgba(255,255,255,0.02);
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
         }
         @media (max-width: 900px) {
           #hero { padding: 160px 24px 100px !important; }
