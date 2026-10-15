@@ -86,7 +86,8 @@ footer {
 .brand {
   position: fixed;
   top: 22px;
-  left: 28px;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 60;
   display: flex;
   align-items: center;
@@ -787,7 +788,7 @@ footer a:hover {
 @media (max-width: 900px) {
   section { padding: 84px 0; }
   .container { padding: 0 24px; }
-  .brand { left: 14px; top: 14px; }
+  .brand { left: 50%; top: 14px; }
   .brand-name { font-size: 17px; }
   .lang { right: 14px; top: 14px; }
   #hero { padding: 130px 0 110px; }
